@@ -1,18 +1,29 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
+import QuickNote from "@/components/ui/quick-note"
 
 export default function Page() {
   return (
     <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
+      <div className="flex w-full flex-col gap-6">
+        <header className="flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-medium">Ideas — Quick Notes</h1>
+            <p className="text-sm text-muted-foreground">Jot ideas quickly. No folders, no friction.</p>
+          </div>
+          <div className="hidden sm:block">
+            <Button>New</Button>
+          </div>
+        </header>
+
+        <main>
+          <QuickNote />
+        </main>
+
+        <footer className="text-xs text-muted-foreground">
+          (Press <kbd>n</kbd> to focus the note box; ⌘/Ctrl+Enter to save)
+        </footer>
       </div>
     </div>
   )
